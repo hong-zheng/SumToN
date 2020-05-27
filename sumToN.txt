@@ -1,0 +1,29 @@
+求1+2+3+...+n，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。
+
+
+
+class Solution {
+public:
+    // 内部类
+    class Sum{
+        public:
+            Sum(){
+                _sum+=_num;
+                ++_num;
+            }
+    };
+    int Sum_Solution(int n) {
+        // 重置
+        _num = 1 ;
+        _sum = 0 ;
+        Sum sumArray[n]; // 调用n次Sum类的构造函数，创建Sum对象数组
+        return _sum;
+    }
+
+private:
+    static int _sum ;
+    static int _num ;
+};
+
+int Solution::_sum = 0  ;
+int Solution::_num = 1 ;
